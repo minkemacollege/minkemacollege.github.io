@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #a5b4cb;
+            font-size: 1.1rem;
+        }
+        
+        /* Knoppen Grid */
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .buttons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .buttons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Knop Stijl */
+        .square-button {
+            aspect-ratio: 1 / 1; /* Maakt het een perfect vierkant */
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .square-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .square-button:active {
+            transform: translateY(-2px);
+        }
+        
+        /* Eerste Letter */
+        .first-letter {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Titel */
+        .button-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 0 10px;
+        }
+        
+        /* Beschrijving */
+        .button-desc {
+            font-size: 0.9rem;
+            color: #a5b4cb;
+            text-align: center;
+            padding: 0 10px;
+            margin-top: 5px;
+        }
+        
+        /* Individuele knop kleuren */
+        .btn-google { border-color: #4285F4; }
+        .btn-google .first-letter { background: linear-gradient(135deg, #4285F4, #34A853); -webkit-background-clip: text; }
+        
+        .btn-youtube { border-color: #FF0000; }
+        .btn-youtube .first-letter { background: linear-gradient(135deg, #FF0000, #FF6B6B); -webkit-background-clip: text; }
+        
+        .btn-github { border-color: #333; }
+        .btn-github .first-letter { background: linear-gradient(135deg, #333, #6e5494); -webkit-background-clip: text; }
+        
+        .btn-chatgpt { border-color: #10A37F; }
+        .btn-chatgpt .first-letter { background: linear-gradient(135deg, #10A37F, #68D391); -webkit-background-clip: text; }
+        
+        .btn-twitter { border-color: #1DA1F2; }
+        .btn-twitter .first-letter { background: linear-gradient(135deg, #1DA1F2, #6574cd); -webkit-background-clip: text; }
+        
+        .btn-reddit { border-color: #FF4500; }
+        .btn-reddit .first-letter { background: linear-gradient(135deg, #FF4500, #FF6B35); -webkit-background-clip: text; }
+        
+        .btn-netflix { border-color: #E50914; }
+        .btn-netflix .first-letter { background: linear-gradient(135deg, #E50914, #B81D24); -webkit-background-clip: text; }
+        
+        .btn-spotify { border-color: #1DB954; }
+        .btn-spotify .first-letter { background: linear-gradient(135deg, #1DB954, #1ED760); -webkit-background-clip: text; }
+        
+        .btn-amazon { border-color: #FF9900; }
+        .btn-amazon .first-letter { background: linear-gradient(135deg, #FF9900, #FFD700); -webkit-background-clip: text; }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #a5b4cb;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mijn Startscherm</h1>
+            <p class="subtitle">Klik op een knop om naar je favoriete website te gaan</p>
+        </header>
+        
+        <main class="buttons-grid">
+            <!-- KNOP 1 - Google -->
+            <a href="https://www.google.com" target="_blank" class="square-button btn-google">
+                <div class="first-letter">G</div>
+                <div class="button-title">Google</div>
+                <div class="button-desc">Zoekmachine</div>
+            </a>
+            
+            <!-- KNOP 2 - YouTube -->
+            <a href="https://www.youtube.com" target="_blank" class="square-button btn-youtube">
+                <div class="first-letter">Y</div>
+                <div class="button-title">YouTube</div>
+                <div class="button-desc">Video platform</div>
+            </a>
+            
+            <!-- KNOP 3 - GitHub -->
+            <a href="https://www.github.com" target="_blank" class="square-button btn-github">
+                <div class="first-letter">G</div>
+                <div class="button-title">GitHub</div>
+                <div class="button-desc">Code hosting</div>
+            </a>
+            
+            <!-- KNOP 4 - ChatGPT -->
+            <a href="https://chat.openai.com" target="_blank" class="square-button btn-chatgpt">
+                <div class="first-letter">C</div>
+                <div class="button-title">ChatGPT</div>
+                <div class="button-desc">AI assistant</div>
+            </a>
+            
+            <!-- KNOP 5 - Twitter/X -->
+            <a href="https://twitter.com" target="_blank" class="square-button btn-twitter">
+                <div class="first-letter">T</div>
+                <div class="button-title">Twitter</div>
+                <div class="button-desc">Social media</div>
+            </a>
+            
+            <!-- KNOP 6 - Reddit -->
+            <a href="https://www.reddit.com" target="_blank" class="square-button btn-reddit">
+                <div class="first-letter">R</div>
+                <div class="button-title">Reddit</div>
+                <div class="button-desc">Forum community</div>
+            </a>
+            
+            <!-- KNOP 7 - Netflix -->
+            <a href="https://www.netflix.com" target="_blank" class="square-button btn-netflix">
+                <div class="first-letter">N</div>
+                <div class="button-title">Netflix</div>
+                <div class="button-desc">Streaming service</div>
+            </a>
+            
+            <!-- KNOP 8 - Spotify -->
+            <a href="https://open.spotify.com" target="_blank" class="square-button btn-spotify">
+                <div class="first-letter">S</div>
+                <div class="button-title">Spotify</div>
+                <div class="button-desc">Muziek streaming</div>
+            </a>
+            
+            <!-- KNOP 9 - Amazon -->
+            <a href="https://www.amazon.com" target="_blank" class="square-button btn-amazon">
+                <div class="first-letter">A</div>
+                <div class="button-title">Amazon</div>
+                <div class="button-desc">Online winkel</div>
+            </a>
+        </main>
+        
+        <footer>
+            <p>9 handige knoppen - Bewerk de links in de code</p>
+        </footer>
+    </div>
+
+    <script>
+        // Functie om huidige tablad te vervangen (ipv nieuw tabblad)
+        document.querySelectorAll('.square-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Als Ctrl of Cmd niet ingedrukt is, vervang huidige tab
+                if (!e.ctrlKey && !e.metaKey) {
+                    // Vervang huidige pagina
+                    window.location.href = this.href;
+                    return false; // Voorkom standaard gedrag
+                }
+                // Als Ctrl/Cmd ingedrukt is, open in nieuw tabblad (standaard gedrag)
+            });
+        });
+        
+        // Sneltoetsen
+        document.addEventListener('keydown', function(e) {
+            // Alt + 1-9 voor knoppen
+            if (e.altKey && e.key >= '1' && e.key <= '9') {
+                const buttonIndex = parseInt(e.key) - 1;
+                const buttons = document.querySelectorAll('.square-button');
+                if (buttons[buttonIndex]) {
+                    buttons[buttonIndex].click();
+                }
+            }
+        });
+        
+        console.log('🚀 Startscherm geladen!');
+        console.log('Sneltoetsen: Alt + 1-9 voor knoppen');
+    </script>
+</body>
+</html>
